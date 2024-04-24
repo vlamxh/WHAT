@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "what"; # Define your hostname.
+  networking.hostName = "whatcluster"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -111,7 +111,8 @@
     neovim
     git
     nano
-    lightdm
+    sakura
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
