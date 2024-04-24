@@ -112,6 +112,9 @@
     git
     nano
     lightdm
+    htop
+    docker
+    docker-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
