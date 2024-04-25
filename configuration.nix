@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./what.nix
-
+      ./wm.nix
     ];
 
   # Bootloader.
@@ -44,20 +44,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-   services.xserver = {
-    enable = true;   
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
-    displayManager.defaultSession = "xfce";
-    windowManager.i3.enable = true;
-  };
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   # Configure keymap in X11
