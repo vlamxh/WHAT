@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./what.nix
+
     ];
 
   # Bootloader.
@@ -87,33 +89,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.vlamxh = {
-    isNormalUser = true;
-    description = "vlamxh";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      obsidian
-    #  thunderbird
-    ];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    neofetch
-    neovim
-    git
-    nano
-    sakura
-
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -124,11 +101,9 @@
   # };
 
   # List services that you want to enable:
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
-nixpkgs.config.permittedInsecurePackages = [
-                "electron-25.9.0"
-              ];
 
+#flakes enabled
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
