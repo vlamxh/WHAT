@@ -42,20 +42,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-   services.xserver = {
-    enable = true;   
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
-    displayManager.defaultSession = "xfce";
-    windowManager.i3.enable = true;
-  };
+
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   # Configure keymap in X11
@@ -93,8 +80,7 @@
     description = "vlamxh";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      obsidian
+
     #  thunderbird
     ];
   };
@@ -113,8 +99,6 @@
     nano
     lightdm
     htop
-    docker
-    docker-compose
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -127,10 +111,6 @@
 
   # List services that you want to enable:
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
-nixpkgs.config.permittedInsecurePackages = [
-                "electron-25.9.0"
-              ];
-
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
