@@ -27,6 +27,7 @@
     nano
     sakura
     ranger
+    tmux
   ];
 
 nixpkgs.config.permittedInsecurePackages = [
